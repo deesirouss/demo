@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup Stage
+          name: Deploy to ECS
           command: |
             sudo apt update -y
             # login to aws 
@@ -17,5 +17,10 @@ jobs:
             docker push public.ecr.aws/o2e6u6n6/demo:1.0
             # update ecs service 
             aws ecs update-service --cluster demo --service demo --force-new-deployment --region us-east-1
+workflows:
+  version: 2
+  deploy_api:
+    jobs:
+      - deploy
             
 
