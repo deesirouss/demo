@@ -9,6 +9,7 @@ function App() {
         <p>
           Hello Beautiful Peaple !
 	  How was the DevOps Part 2 session !
+	  Hope you have enjoyed alot !
         </p>
         <a
           className="App-link"
